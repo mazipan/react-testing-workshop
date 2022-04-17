@@ -1,5 +1,7 @@
 # 🧪 React Testing Workshop
 
+[![codecov](https://codecov.io/gh/mazipan/react-testing-workshop/branch/master/graph/badge.svg?token=4HQBLSFS76)](https://codecov.io/gh/mazipan/react-testing-workshop)
+
 Code sample for showcasing basic React Testing Library
 
 ![Ghibli Apps](./screenshot.png)
