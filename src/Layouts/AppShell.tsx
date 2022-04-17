@@ -1,8 +1,8 @@
-import { AppShell, Navbar, Header, MediaQuery, Burger, Text, useMantineTheme, Footer, Center, UnstyledButton } from '@mantine/core';
+import { AppShell, Navbar, Header, MediaQuery, Burger, Text, useMantineTheme, Footer, Center, Button, Group } from '@mantine/core';
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
-import { Movie, Users } from 'tabler-icons-react';
+import { Movie, Users, BrandGithub } from 'tabler-icons-react';
 
 
 import NavLink from './NavLink';
@@ -41,19 +41,15 @@ function AppShellLayout() {
                 mr="xl"
               />
             </MediaQuery>
-            <UnstyledButton<typeof Link> component={Link} to="/"
-              sx={(theme) => ({
-                padding: theme.spacing.xs,
-                borderRadius: theme.radius.sm,
-                color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
-                '&:hover': {
-                  backgroundColor:
-                    theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-                },
-              })}
-            >
-              <Text size="sm">🧪 React Testing Workshop</Text>
-            </UnstyledButton>
+            <Group position="apart" style={{ width: '100%' }}>
+              <Button<typeof Link> variant="subtle" component={Link} to="/" title="Home">
+                <Text size="sm">🧪 React Testing Workshop</Text>
+              </Button>
+
+              <Button<'a'> variant="subtle" title="GitHub" component="a" target="_blank" rel="noreferrer noopener" href="https://github.com/mazipan/react-testing-workshop">
+                <BrandGithub />
+              </Button>
+            </Group>
           </div>
         </Header>
       }
