@@ -3,13 +3,28 @@ import { MantineProvider } from '@mantine/core';
 
 import {
   Routes,
-  Route
+  Route,
+  useNavigate,
+  useLocation,
 } from "react-router-dom";
 
 import Films from './pages/Films';
 import People from './pages/People';
+import { useEffect } from 'react';
 
 function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log('TO USE EFFECT', location)
+    if (location.hash && location.hash.includes('callback')) {
+      console.log('REDIRECTTTT...')
+      navigate('/people');
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <MantineProvider>
         <Routes>

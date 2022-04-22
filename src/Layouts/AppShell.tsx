@@ -11,6 +11,11 @@ function AppShellLayout() {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
 
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.assign('https://mazipan.space')
+  }
+
   return (
     <AppShell
       styles={{
@@ -26,6 +31,7 @@ function AppShellLayout() {
           <Navbar.Section ml="-xs" mr="xs" px="xs">
             <NavLink label="Films" color="grape" icon={<Movie />} href="/films" />
             <NavLink label="People" color="red" icon={<Users />} href="/people" />
+            <a href="https://mazipan.space" onClick={handleClick}>To external</a>
           </Navbar.Section>
         </Navbar>
       }
